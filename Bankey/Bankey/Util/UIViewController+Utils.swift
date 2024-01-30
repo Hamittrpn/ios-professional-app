@@ -11,7 +11,7 @@ extension UIViewController{
     func setStatusBar(){
         let navBarAppearance = UINavigationBarAppearance()
         navBarAppearance.configureWithTransparentBackground()
-        navBarAppearance.backgroundColor = appColor
+        navBarAppearance.backgroundColor = primaryColor
         UINavigationBar.appearance().standardAppearance = navBarAppearance
         UINavigationBar.appearance().scrollEdgeAppearance = navBarAppearance
     }

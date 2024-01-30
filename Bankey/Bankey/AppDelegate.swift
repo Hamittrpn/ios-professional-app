@@ -7,7 +7,11 @@
 
 import UIKit
 
-let appColor : UIColor = .systemTeal
+let appColor = UIColor(red: 0.12, green: 0.15, blue: 0.27, alpha: 1.00)
+let primaryColor = UIColor(red: 0.28, green: 0.31, blue: 0.48, alpha: 1.00)
+let secondaryColor = UIColor(red: 0.51, green: 0.41, blue: 0.62, alpha: 1.00)
+let thirdColor = UIColor(red: 1.00, green: 0.82, blue: 0.93, alpha: 1.00)
+let errorColor = UIColor(red: 0.82, green: 0.27, blue: 0.27, alpha: 1.00)
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -53,7 +57,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     private func prepMainView(){
         mainViewController.setStatusBar()
         UINavigationBar.appearance().isTranslucent = false
-        UINavigationBar.appearance().backgroundColor = appColor
+        UINavigationBar.appearance().backgroundColor = primaryColor
     }
 }
 

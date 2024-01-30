@@ -20,7 +20,7 @@ class LoginViewController: UIViewController {
     let titleLabel = UILabel()
     let subtitleLabel = UILabel()
     let loginView = LoginView()
-    let signInButton = UIButton(type: .system)
+    let signInButton = UIButton()
     let errorMessageLabel = UILabel()
     
     weak var delegate: LoginViewControllerDelegate?
@@ -42,6 +42,7 @@ class LoginViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        setGradientBackground()
         style()
         layout()
     }
@@ -55,6 +56,23 @@ class LoginViewController: UIViewController {
         super.viewDidAppear(animated)
         animate()
     }
+    
+    private func setGradientBackground(){
+        
+        let startColor = UIColor(red: 0.67, green: 0.73, blue: 0.73, alpha: 0.67)
+        
+        let endColor = UIColor(red: 1.00, green: 1.00, blue: 1.00, alpha: 1.00)
+
+        // Gradient layer oluştur
+        let gradientLayer = CAGradientLayer()
+        gradientLayer.frame = view.bounds
+        gradientLayer.colors = [startColor.cgColor, endColor.cgColor]
+        gradientLayer.startPoint = CGPoint(x: 1.0, y: 0.0)
+        gradientLayer.endPoint = CGPoint(x: 1.0, y: 1.0)
+
+        // Gradient layer'ı view'e ekle
+        view.layer.insertSublayer(gradientLayer, at: 0)
+    }
 }
 
 extension LoginViewController{
@@ -64,6 +82,7 @@ extension LoginViewController{
         titleLabel.font = UIFont.preferredFont(forTextStyle: .largeTitle)
         titleLabel.adjustsFontForContentSizeCategory = true
         titleLabel.text = "Bankey"
+        titleLabel.textColor = primaryColor
         titleLabel.alpha = 0
 
         subtitleLabel.translatesAutoresizingMaskIntoConstraints = false
@@ -71,6 +90,7 @@ extension LoginViewController{
         subtitleLabel.font = UIFont.preferredFont(forTextStyle: .title3)
         subtitleLabel.adjustsFontForContentSizeCategory = true
         subtitleLabel.numberOfLines = 0
+        subtitleLabel.textColor = secondaryColor
         subtitleLabel.text = "Your premium source for all things banking!"
         subtitleLabel.alpha = 0
         
@@ -78,13 +98,15 @@ extension LoginViewController{
         
         signInButton.translatesAutoresizingMaskIntoConstraints = false
         signInButton.configuration = .filled()
+        signInButton.tintColor = primaryColor
         signInButton.configuration?.imagePadding = 8
         signInButton.setTitle("Sign In", for: [])
+
         signInButton.addTarget(self, action: #selector(signInTapped), for: .primaryActionTriggered )
         
         errorMessageLabel.translatesAutoresizingMaskIntoConstraints = false
         errorMessageLabel.textAlignment = .center
-        errorMessageLabel.textColor = .systemRed
+        errorMessageLabel.textColor = errorColor
         errorMessageLabel.numberOfLines = 0
         errorMessageLabel.isHidden = true
     }
