@@ -7,6 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		954B6FB92B6AC75C006A292C /* AccountSummaryViewController+Network.swift in Sources */ = {isa = PBXBuildFile; fileRef = 954B6FB82B6AC75C006A292C /* AccountSummaryViewController+Network.swift */; };
+		954B6FBC2B6AC799006A292C /* NetworkErrorEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = 954B6FBB2B6AC799006A292C /* NetworkErrorEnum.swift */; };
+		954B6FBF2B6AC7F2006A292C /* ProfileModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 954B6FBE2B6AC7F2006A292C /* ProfileModel.swift */; };
+		954B6FCD2B6AC9F4006A292C /* ServiceTypeEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = 954B6FCC2B6AC9F4006A292C /* ServiceTypeEnum.swift */; };
+		954B6FCF2B6ACD8F006A292C /* AccountModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 954B6FCE2B6ACD8F006A292C /* AccountModel.swift */; };
+		954B6FD12B6ACDE1006A292C /* AccountTypeEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = 954B6FD02B6ACDE1006A292C /* AccountTypeEnum.swift */; };
+		954B6FD32B6AD2CC006A292C /* Date+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 954B6FD22B6AD2CC006A292C /* Date+Utils.swift */; };
 		9560D0382B6905C300F95927 /* AccountSummaryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9560D0372B6905C300F95927 /* AccountSummaryCell.swift */; };
 		9560D03A2B691A3D00F95927 /* Decimal+Util.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9560D0392B691A3D00F95927 /* Decimal+Util.swift */; };
 		9560D03C2B691A8700F95927 /* CurrencyFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9560D03B2B691A8700F95927 /* CurrencyFormatter.swift */; };
@@ -40,6 +47,13 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		954B6FB82B6AC75C006A292C /* AccountSummaryViewController+Network.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AccountSummaryViewController+Network.swift"; sourceTree = "<group>"; };
+		954B6FBB2B6AC799006A292C /* NetworkErrorEnum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkErrorEnum.swift; sourceTree = "<group>"; };
+		954B6FBE2B6AC7F2006A292C /* ProfileModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileModel.swift; sourceTree = "<group>"; };
+		954B6FCC2B6AC9F4006A292C /* ServiceTypeEnum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceTypeEnum.swift; sourceTree = "<group>"; };
+		954B6FCE2B6ACD8F006A292C /* AccountModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountModel.swift; sourceTree = "<group>"; };
+		954B6FD02B6ACDE1006A292C /* AccountTypeEnum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountTypeEnum.swift; sourceTree = "<group>"; };
+		954B6FD22B6AD2CC006A292C /* Date+Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Utils.swift"; sourceTree = "<group>"; };
 		9560D0372B6905C300F95927 /* AccountSummaryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountSummaryCell.swift; sourceTree = "<group>"; };
 		9560D0392B691A3D00F95927 /* Decimal+Util.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Decimal+Util.swift"; sourceTree = "<group>"; };
 		9560D03B2B691A8700F95927 /* CurrencyFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyFormatter.swift; sourceTree = "<group>"; };
@@ -83,6 +97,25 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		954B6FBA2B6AC778006A292C /* Enum */ = {
+			isa = PBXGroup;
+			children = (
+				954B6FBB2B6AC799006A292C /* NetworkErrorEnum.swift */,
+				954B6FCC2B6AC9F4006A292C /* ServiceTypeEnum.swift */,
+				954B6FD02B6ACDE1006A292C /* AccountTypeEnum.swift */,
+			);
+			path = Enum;
+			sourceTree = "<group>";
+		};
+		954B6FBD2B6AC7DC006A292C /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				954B6FBE2B6AC7F2006A292C /* ProfileModel.swift */,
+				954B6FCE2B6ACD8F006A292C /* AccountModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		9560D0352B69059300F95927 /* Header */ = {
 			isa = PBXGroup;
 			children = (
@@ -125,6 +158,7 @@
 				957156582B682CA600E21737 /* LocalState.swift */,
 				9560D03B2B691A8700F95927 /* CurrencyFormatter.swift */,
 				9560D04C2B694A6E00F95927 /* NSNotificationName.swift */,
+				954B6FD22B6AD2CC006A292C /* Date+Utils.swift */,
 			);
 			path = Util;
 			sourceTree = "<group>";
@@ -133,6 +167,8 @@
 			isa = PBXGroup;
 			children = (
 				9571565F2B683ED200E21737 /* AccountSummaryViewController.swift */,
+				954B6FB82B6AC75C006A292C /* AccountSummaryViewController+Network.swift */,
+				954B6FBD2B6AC7DC006A292C /* Model */,
 				9560D0352B69059300F95927 /* Header */,
 				9560D0362B6905A400F95927 /* Cells */,
 			);
@@ -162,6 +198,7 @@
 			children = (
 				959ABAFA2B65A4510057D0F7 /* AppDelegate.swift */,
 				9571565C2B68339600E21737 /* MainViewController.swift */,
+				954B6FBA2B6AC778006A292C /* Enum */,
 				959ABB0F2B65A8E00057D0F7 /* Login */,
 				95F3228B2B66EF230000999E /* Onboarding */,
 				9571565E2B683E6E00E21737 /* AccountSummary */,
@@ -314,16 +351,23 @@
 				959ABB112B65A9140057D0F7 /* LoginView.swift in Sources */,
 				957156592B682CA600E21737 /* LocalState.swift in Sources */,
 				9560D03A2B691A3D00F95927 /* Decimal+Util.swift in Sources */,
+				954B6FBF2B6AC7F2006A292C /* ProfileModel.swift in Sources */,
 				957156622B68426200E21737 /* AccountSummaryHeaderView.swift in Sources */,
+				954B6FCD2B6AC9F4006A292C /* ServiceTypeEnum.swift in Sources */,
 				9560D04F2B694C4100F95927 /* UITextField+SecureToggle.swift in Sources */,
+				954B6FD32B6AD2CC006A292C /* Date+Utils.swift in Sources */,
 				9560D03C2B691A8700F95927 /* CurrencyFormatter.swift in Sources */,
 				9560D04D2B694A6E00F95927 /* NSNotificationName.swift in Sources */,
+				954B6FBC2B6AC799006A292C /* NetworkErrorEnum.swift in Sources */,
 				959ABAFF2B65A4510057D0F7 /* LoginViewController.swift in Sources */,
 				9560D0382B6905C300F95927 /* AccountSummaryCell.swift in Sources */,
 				95F3228F2B66FA140000999E /* OnboardingViewController.swift in Sources */,
+				954B6FD12B6ACDE1006A292C /* AccountTypeEnum.swift in Sources */,
 				9571565D2B68339600E21737 /* MainViewController.swift in Sources */,
 				957156602B683ED200E21737 /* AccountSummaryViewController.swift in Sources */,
+				954B6FCF2B6ACD8F006A292C /* AccountModel.swift in Sources */,
 				959ABAFB2B65A4510057D0F7 /* AppDelegate.swift in Sources */,
+				954B6FB92B6AC75C006A292C /* AccountSummaryViewController+Network.swift in Sources */,
 				9560D0522B6977DB00F95927 /* ShakeyBellView.swift in Sources */,
 				95F3228D2B66EF440000999E /* OnboardingContainerViewController.swift in Sources */,
 			);

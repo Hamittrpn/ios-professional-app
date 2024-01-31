@@ -14,6 +14,7 @@ extension UITextField{
     func enablePasswordToggle(){
         passwordToggleButton.setImage(UIImage(systemName: "eye.slash.fill"), for: .normal)
         passwordToggleButton.setImage(UIImage(systemName: "eye.fill"), for: .selected)
+        passwordToggleButton.tintColor = primaryColor
         passwordToggleButton.addTarget(self, action: #selector(togglePasswordView), for: .touchUpInside)
         rightView = passwordToggleButton
         rightViewMode = .always
