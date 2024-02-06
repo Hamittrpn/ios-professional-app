@@ -1,10 +1,3 @@
-//
-//  AccountSummaryViewController.swift
-//  Bankey
-//
-//  Created by Hamit Tırpan on 29.01.2024.
-//
-
 import UIKit
 
 class AccountSummaryViewController: UIViewController{
@@ -30,21 +23,16 @@ class AccountSummaryViewController: UIViewController{
     override func viewDidLoad() {
         super.viewDidLoad()
         setup()
-        setupNavigationBar()
-    }
-    
-    private func setupNavigationBar(){
-        navigationItem.rightBarButtonItem = logoutBarButtonItem
     }
 }
 
 extension AccountSummaryViewController{
 
     func setup(){
+        setupNavigationBar()
         setupTableView()
         setupTableHeaderView()
-        //fetchAccounts()
-        fetchDataAndLoadView()
+        fetchData()
     }
     
     private func setupTableView(){
@@ -68,12 +56,14 @@ extension AccountSummaryViewController{
     }
     
     private func setupTableHeaderView(){
-        
-        
         var size = headerView.systemLayoutSizeFitting(UIView.layoutFittingCompressedSize)
         size.width = UIScreen.main.bounds.width
         headerView.frame.size = size
         tableView.tableHeaderView = headerView
+    }
+    
+    private func setupNavigationBar(){
+        navigationItem.rightBarButtonItem = logoutBarButtonItem
     }
 }
 
@@ -110,27 +100,36 @@ extension AccountSummaryViewController{
 }
 
 extension AccountSummaryViewController{
-    private func fetchDataAndLoadView(){
+    private func fetchData(){
+        
+        let group = DispatchGroup()
+        
+        group.enter()
         fetchProfile(forUserId: "1") { result in
             switch result{
             case .success(let profile):
                 self.profile = profile
                 self.configureTableHeaderView(with: profile)
-                self.tableView.reloadData()
             case .failure(let error):
                 print(error.localizedDescription)
             }
+            group.leave()
         }
         
+        group.enter()
         fetchAccounts(forUserId: "1") { result in
             switch result{
             case .success(let accounts):
                 self.accounts = accounts
                 self.configureTableCells(with: accounts)
-                self.tableView.reloadData()
             case .failure(let error):
                 print(error.localizedDescription)
             }
+            group.leave()
+        }
+        
+        group.notify(queue: .main) {
+            self.tableView.reloadData()
         }
     }
     
