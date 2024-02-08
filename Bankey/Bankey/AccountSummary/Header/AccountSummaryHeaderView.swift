@@ -1,10 +1,3 @@
-//
-//  AccountSummaryHeaderView.swift
-//  Bankey
-//
-//  Created by Hamit Tırpan on 29.01.2024.
-//
-
 import UIKit
 
 class AccountSummaryHeaderView: UIView{
